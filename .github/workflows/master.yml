@@ -19,3 +19,15 @@ jobs:
 
       - name: Maven Build
         run: mvn -B package --file pom.xml
+
+      - name: Build Docker image
+        run: docker build -t chuck-facts .
+
+      - name: Push to GitHub Packages
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: univ-smb-m1-isc-2020/chuck-facts/chuck-facts
+          tag_with_ref: true
