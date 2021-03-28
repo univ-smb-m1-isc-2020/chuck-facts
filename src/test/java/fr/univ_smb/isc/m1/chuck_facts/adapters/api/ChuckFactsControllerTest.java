@@ -1,6 +1,6 @@
 package fr.univ_smb.isc.m1.chuck_facts.adapters.api;
 
-import fr.univ_smb.isc.m1.chuck_facts.application.ChuckFact;
+import fr.univ_smb.isc.m1.chuck_facts.infrastructure.persistence.ChuckFact;
 import fr.univ_smb.isc.m1.chuck_facts.application.ChuckFactsService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

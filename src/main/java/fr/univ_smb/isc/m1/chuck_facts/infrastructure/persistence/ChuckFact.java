@@ -1,11 +1,22 @@
-package fr.univ_smb.isc.m1.chuck_facts.application;
+package fr.univ_smb.isc.m1.chuck_facts.infrastructure.persistence;
 
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class ChuckFact {
 
+    @Id
+    @GeneratedValue
     private Long id;
 
     private String name;
+
+    public ChuckFact() {
+        // JPA
+    }
 
     public ChuckFact(String name) {
         this.name = name;
