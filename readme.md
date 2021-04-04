@@ -7,11 +7,14 @@ Now with a controller
 
 application can be run locally with the following command :
 
+cd dev-station
+docker-compose up
+cd ..
 mvn spring-boot:run
 
 (please do make sure you can run maven on command line)
 
  - actuator endpoints available on http://localhost:8080/actuator/health
- - first controller available here http://localhost:8080/chuck-facts
+ - first controller available here http://localhost:8080/api/chuck-facts
 
 
