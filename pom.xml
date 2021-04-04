@@ -34,6 +34,10 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <dependency>
@@ -117,7 +121,7 @@
                         <!-- Default config for vanilla install of a local postgresql -->
                         <SPRING_DATASOURCE_URL>jdbc:postgresql://localhost:5432/postgres</SPRING_DATASOURCE_URL>
                         <SPRING_DATASOURCE_USERNAME>postgres</SPRING_DATASOURCE_USERNAME>
-                        <SPRING_DATASOURCE_PASSWORD>postgres</SPRING_DATASOURCE_PASSWORD>
+                        <SPRING_DATASOURCE_PASSWORD>password</SPRING_DATASOURCE_PASSWORD>
                         <SPRING_JPA_HIBERNATE_DDL_AUTO>update</SPRING_JPA_HIBERNATE_DDL_AUTO>
                         <SPRING_JPA_DATABASE>POSTGRESQL</SPRING_JPA_DATABASE>
                     </environmentVariables>
