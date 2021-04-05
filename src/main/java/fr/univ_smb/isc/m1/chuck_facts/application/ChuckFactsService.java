@@ -5,6 +5,7 @@ import fr.univ_smb.isc.m1.chuck_facts.infrastructure.persistence.ChuckFactsRepos
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ChuckFactsService {
@@ -19,4 +20,13 @@ public class ChuckFactsService {
         return repository.findAll();
     }
 
+    public void delete(Long factId) {
+        Optional<ChuckFact> fact = repository.findById(factId);
+        fact.ifPresent(repository::delete);
+    }
+
+    public void create(String fact, String author) {
+        // FIXME : check if not already present
+        repository.save(new ChuckFact(fact, author));
+    }
 }

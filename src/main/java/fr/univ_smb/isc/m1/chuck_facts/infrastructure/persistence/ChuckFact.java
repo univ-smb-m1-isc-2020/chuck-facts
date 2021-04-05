@@ -13,13 +13,19 @@ public class ChuckFact {
     private Long id;
 
     private String name;
+    private String author;
 
     public ChuckFact() {
         // JPA
     }
 
-    public ChuckFact(String name) {
+    public ChuckFact(String name, String author) {
         this.name = name;
+        this.author = author;
+    }
+
+    public ChuckFact(String name) {
+        this(name, null);
     }
 
     public Long getId() {
@@ -36,5 +42,13 @@ public class ChuckFact {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 }
