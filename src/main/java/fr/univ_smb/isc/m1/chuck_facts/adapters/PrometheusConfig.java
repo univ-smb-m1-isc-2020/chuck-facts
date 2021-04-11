@@ -1,4 +1,4 @@
-package fr.univ_smb.isc.m1/chuck_facts/adapters
+package fr.univ_smb.isc.m1/chuck_facts/adapters;
 
 import io.prometheus.client.exporter.MetricsServlet;
 import io.prometheus.client.hotspot.DefaultExports;
