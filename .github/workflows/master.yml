@@ -39,7 +39,7 @@ jobs:
 #        run: docker pull ghcr.io/univ-smb-m1-isc-2020/chuck-facts:latest
 
       - name: Build Docker image
-        run: docker build . --tag ghcr.io/univ-smb-m1-isc-2020/chuck-facts:$GITHUB_SHA --cache-from ghcr.io/univ-smb-m1-isc-2020/chuck-facts:latest
+        run: docker build . --tag ghcr.io/univ-smb-m1-isc-2020/chuck-facts:latest
 
       - name: Publish Docker image
         run: docker push ghcr.io/univ-smb-m1-isc-2020/chuck-facts:$GITHUB_SHA
