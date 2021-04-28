@@ -35,8 +35,8 @@ jobs:
 #      - name: Setup GitHub Container Registry
 #        run: echo "$env:GH_PAT" | docker login https://ghcr.io -u $ --password-stdin
         
-      - name: Pull previous image
-        run: docker pull ghcr.io/univ-smb-m1-isc-2020/chuck-facts:latest
+#      - name: Pull previous image
+#        run: docker pull ghcr.io/univ-smb-m1-isc-2020/chuck-facts:latest
 
       - name: Build Docker image
         run: docker build . --tag ghcr.io/univ-smb-m1-isc-2020/chuck-facts:$GITHUB_SHA --cache-from ghcr.io/univ-smb-m1-isc-2020/chuck-facts:latest
