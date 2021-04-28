@@ -25,7 +25,9 @@ jobs:
 
 #      - name: Login on Registry
 #        run: echo ${{ secrets.CR_PAT }} | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
-
+      - name: Setup GitHub Container Registry
+        run: echo "$env:GH_PAT" | docker login https://ghcr.io -u $ --password-stdin
+        
       - name: Pull previous image
         run: docker pull ghcr.io/univ-smb-m1-isc-2020/chuck-facts:latest
 
