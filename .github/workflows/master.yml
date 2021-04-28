@@ -23,14 +23,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
-      - name: Build Docker image
-        run: docker build -t chuck-facts .
+      - name: Login on Registry
+        run: echo ${{ secrets.CR_PAT }} | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
 
-      - name: Push to GitHub Packages
-        uses: docker/build-push-action@v2
-        with:
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-          registry: ghcr.io
-          repository: univ-smb-m1-isc-2020/chuck-facts/chuck-facts
-          tag_with_ref: true
+      - name: Pull previous image
+        run: docker pull ghcr.io/univ-smb-m1-isc-2020/chuck-facts:latest
+
+      - name: Build Docker image
+        run: docker build . --tag ghcr.io/univ-smb-m1-isc-2020/chuck-facts:$GITHUB_SHA --cache-from ghcr.io/univ-smb-m1-isc-2020/chuck-facts:latest
+
+      - name: Publish Docker image
+        run: docker push ghcr.io/univ-smb-m1-isc-2020/chuck-facts:$GITHUB_SHA
+        
