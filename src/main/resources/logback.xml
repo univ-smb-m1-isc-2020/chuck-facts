@@ -5,7 +5,7 @@
     <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
         <!-- logstash input address corresponds to the input of the logstash.conf configuration file -->
         <!-- The relative address of my logstash here is 192.168.10.128 The port is the port configured by logstash.conf input -->
-        <destination>logstash:4560</destination>
+        <destination>logstash:9600</destination>
         <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder" />
     </appender>
 
