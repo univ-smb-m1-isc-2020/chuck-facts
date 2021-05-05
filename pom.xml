@@ -66,28 +66,33 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>io.prometheus</groupId>
+            <artifactId>simpleclient_hotspot</artifactId>
+            <version>${prometheus.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.prometheus</groupId>
+            <artifactId>simpleclient_logback</artifactId>
+            <version>${prometheus.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.prometheus</groupId>
+            <artifactId>simpleclient_spring_boot</artifactId>
+            <version>${prometheus.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.prometheus</groupId>
+            <artifactId>simpleclient_servlet</artifactId>
+            <version>${prometheus.version}</version>
+        </dependency>
 
-         <dependency>
-             <groupId>io.prometheus</groupId>
-             <artifactId>simpleclient_hotspot</artifactId>
-             <version>${prometheus.version}</version>
-         </dependency>
-         <dependency>
-             <groupId>io.prometheus</groupId>
-             <artifactId>simpleclient_logback</artifactId>
-             <version>${prometheus.version}</version>
-         </dependency>
-         <dependency>
-             <groupId>io.prometheus</groupId>
-             <artifactId>simpleclient_spring_boot</artifactId>
-             <version>${prometheus.version}</version>
-         </dependency>             
-         <dependency>
-             <groupId>io.prometheus</groupId>
-             <artifactId>simpleclient_servlet</artifactId>
-             <version>${prometheus.version}</version>
-         </dependency>             
-             
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+            <version>6.6</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -196,7 +201,9 @@
                                     <excludes>
                                         <exclude>org.apache.maven.plugins:maven-verifier-plugin</exclude>
                                     </excludes>
-                                    <message>Please consider using the maven-invoker-plugin (http://maven.apache.org/plugins/maven-invoker-plugin/)!</message>
+                                    <message>Please consider using the maven-invoker-plugin
+                                        (http://maven.apache.org/plugins/maven-invoker-plugin/)!
+                                    </message>
                                 </bannedPlugins>
                                 <requireMavenVersion>
                                     <version>3.5</version>
@@ -221,15 +228,15 @@
                             <goal>display-plugin-updates</goal>
                         </goals>
                     </execution>
-<!-- useless with spring bom
-                    <execution>
-                        <id>display-dependency-updates</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>display-dependency-updates</goal>
-                        </goals>
-                    </execution>
--->
+                    <!-- useless with spring bom
+                                        <execution>
+                                            <id>display-dependency-updates</id>
+                                            <phase>verify</phase>
+                                            <goals>
+                                                <goal>display-dependency-updates</goal>
+                                            </goals>
+                                        </execution>
+                    -->
                 </executions>
             </plugin>
         </plugins>
