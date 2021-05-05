@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <include resource="org/springframework/boot/logging/logback/base.xml" />
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
 
     <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
         <!-- logstash input address corresponds to the input of the logstash.conf configuration file -->
         <!-- The relative address of my logstash here is 192.168.10.128 The port is the port configured by logstash.conf input -->
-        <destination>logstash:9600</destination>
-        <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder" />
+        <remoteHost>logstash</remoteHost>
+        <port>9600</port>
+        <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder"/>
     </appender>
 
     <root level="INFO">
-        <appender-ref ref="LOGSTASH" />
-        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="LOGSTASH"/>
+        <appender-ref ref="CONSOLE"/>
     </root>
 
 </configuration>
