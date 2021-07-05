@@ -18,3 +18,6 @@ mvn spring-boot:run
  - first controller available here http://localhost:8080/api/chuck-facts
 
 
+## Upgrade dependencies version : 
+check latest pom parent version
+mvn versions::use-latest-versions
